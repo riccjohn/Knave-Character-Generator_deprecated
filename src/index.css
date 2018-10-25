@@ -13,6 +13,10 @@ body {
   display: flex;
 }
 
+.column {
+  flex-direction: column;
+}
+
 .container {
   width: 100%;
   background-color: yellow;

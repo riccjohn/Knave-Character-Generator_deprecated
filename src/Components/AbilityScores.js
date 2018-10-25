@@ -1,17 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
 
 class AbilityScores extends Component {
   constructor() {
     super();
     this.state = {
-      name: '',
-      strRaw: 2,
-      dexRaw: 2,
-      conRaw: 3,
-      intRaw: 4,
-      wisRaw: 5,
-      chaRaw: 6,
+      name: 'Samuel Jackson',
+      strRaw: 0,
+      dexRaw: 0,
+      conRaw: 0,
+      intRaw: 0,
+      wisRaw: 0,
+      chaRaw: 0,
+      hp: 0,
+      itemSlots: 0,
     };
+  }
+
+  componentDidMount() {
+    this.rollCharStats();
   }
 
   rollStat = () => {
@@ -22,14 +28,28 @@ class AbilityScores extends Component {
     return Math.min(...rolls);
   };
 
-  rollCharStats = () => {
-    this.setState({
+  rollDice = dieSize => {
+    return Math.floor(Math.random() * dieSize + 1);
+  };
+
+  rollCharStats = async () => {
+    await this.setState({
       strRaw: this.rollStat(),
       dexRaw: this.rollStat(),
       conRaw: this.rollStat(),
       intRaw: this.rollStat(),
       wisRaw: this.rollStat(),
-      charRaw: this.rollStat(),
+      chaRaw: this.rollStat(),
+      hp: this.rollDice(8),
+      armor: 'Chain',
+      helmet: true,
+      shield: true,
+      dungoneeringGear: ['rope', 'crowbar'],
+      genGearA: 'shovel',
+      genGearB: 'face paint',
+    });
+    await this.setState({
+      itemSlots: this.state.conRaw + 10,
     });
   };
 
@@ -72,6 +92,10 @@ class AbilityScores extends Component {
               </tr>
             </tbody>
           </table>
+        </div>
+        <div className="flex column">
+          <p>Level: 1</p>
+          <p>HP: {this.state.hp}</p>
         </div>
         <button onClick={this.rollCharStats}>Roll</button>
       </div>

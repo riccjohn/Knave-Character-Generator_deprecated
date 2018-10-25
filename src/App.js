@@ -1,11 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { AbilityScores } from './Components';
 import './index.css';
 
-class App extends Component {
-  render() {
-    return <AbilityScores />;
-  }
-}
+const App = () => {
+  return (
+    <div>
+      <h1>Knave</h1>
+      <AbilityScores />
+    </div>
+  );
+};
 
 export default App;
