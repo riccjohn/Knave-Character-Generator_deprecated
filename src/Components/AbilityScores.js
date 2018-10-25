@@ -33,13 +33,21 @@ class AbilityScores extends Component {
   };
 
   rollCharStats = async () => {
+    let str, dex, con, intel, wis, chari;
+    const statArr = [];
+    for (let i = 0; i < 6; i++) {
+      statArr.push(this.rollStat());
+    }
+
+    [str, dex, con, intel, wis, chari] = statArr;
+
     await this.setState({
-      strRaw: this.rollStat(),
-      dexRaw: this.rollStat(),
-      conRaw: this.rollStat(),
-      intRaw: this.rollStat(),
-      wisRaw: this.rollStat(),
-      chaRaw: this.rollStat(),
+      strRaw: str,
+      dexRaw: dex,
+      conRaw: con,
+      intRaw: intel,
+      wisRaw: wis,
+      chaRaw: chari,
       hp: this.rollDice(8),
       armor: 'Chain',
       helmet: true,
