@@ -1,5 +1,5 @@
-import React from 'react';
-import { AbilityScores } from './Components';
+import React from 'react'; // eslint-disable-line no-unused-vars
+import { AbilityScores } from './Components'; // eslint-disable-line no-unused-vars
 import './index.css';
 
 const App = () => {
