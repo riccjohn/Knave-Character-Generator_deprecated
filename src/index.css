@@ -19,14 +19,13 @@ body {
 
 .container {
   width: 100%;
-  background-color: yellow;
   justify-content: center;
 }
 
 table {
-  background-color: tomato;
   text-align: center;
   width: 500px;
+  background-color: tomato;
 }
 
 .sideHeading {

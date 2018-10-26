@@ -1,5 +1,5 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
-import { AbilityScores } from './Components'; // eslint-disable-line no-unused-vars
+import { AbilityScores, CharacterDetails } from './Components'; // eslint-disable-line no-unused-vars
 import './index.css';
 
 const App = () => {
@@ -7,6 +7,7 @@ const App = () => {
     <div>
       <h1>Knave</h1>
       <AbilityScores />
+      <CharacterDetails />
     </div>
   );
 };

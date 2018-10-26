@@ -1,4 +1,5 @@
 import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
+import { rollDice } from '../utils/utils';
 
 class AbilityScores extends Component {
   constructor() {
@@ -28,10 +29,6 @@ class AbilityScores extends Component {
     return Math.min(...rolls);
   };
 
-  rollDice = dieSize => {
-    return Math.floor(Math.random() * dieSize + 1);
-  };
-
   rollCharStats = async () => {
     let str, dex, con, intel, wis, chari;
     const statArr = [];
@@ -48,7 +45,7 @@ class AbilityScores extends Component {
       intRaw: intel,
       wisRaw: wis,
       chaRaw: chari,
-      hp: this.rollDice(8),
+      hp: rollDice(8),
       armor: 'Chain',
       helmet: true,
       shield: true,
