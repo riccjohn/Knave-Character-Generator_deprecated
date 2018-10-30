@@ -25,9 +25,14 @@ body {
 table {
   text-align: center;
   width: 500px;
-  background-color: tomato;
+  /* background-color: tomato; */
 }
 
 .sideHeading {
   text-align: left;
+}
+
+table td,
+table tr {
+  border: 1px solid black;
 }

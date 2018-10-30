@@ -77,9 +77,9 @@ class AbilityScores extends Component {
               </tr>
               {Object.keys(abilities).map(ability => (
                 <tr key={ability}>
-                  <td>{abilities[ability]}</td>
-                  <th className={'bold large'}>{ability.slice(0, 3)}</th>
                   <td>{abilities[ability] + 10}</td>
+                  <th className={'bold large'}>{ability.slice(0, 3)}</th>
+                  <td>+{abilities[ability]}</td>
                 </tr>
               ))}
             </tbody>

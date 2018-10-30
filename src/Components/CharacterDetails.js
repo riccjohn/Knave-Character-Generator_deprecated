@@ -23,7 +23,7 @@ class CharacterDetails extends Component {
         background: '',
         misfortunes: '',
       },
-      gear: [],
+      gear: ['rations (2)'],
     };
   }
 
@@ -61,7 +61,7 @@ class CharacterDetails extends Component {
     gearArr.push(generalGearTwo[getRand(generalGearTwo.length)]);
 
     this.setState({
-      gear: gearArr,
+      gear: [...this.state.gear, ...gearArr],
     });
   };
 
@@ -98,7 +98,8 @@ class CharacterDetails extends Component {
     return (
       <div>
         <h1>Items</h1>
-        <table>
+        <p>Item Slots: ____NUM____</p>
+        <table className="gear">
           <tbody>
             {this.state.gear.map(item => (
               <tr key={item}>

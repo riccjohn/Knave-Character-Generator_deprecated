@@ -1,9 +1,9 @@
 export const dungeoneeringGear = [
-  'rope, 50ft',
+  'rope (50\')',
   'pulleys',
-  'candles, 5',
-  'chain, 10ft',
-  'chalk, 10',
+  'candles (5)',
+  'chain (10\')',
+  'chalk (10)',
 ];
 
 export const generalGearOne = [
