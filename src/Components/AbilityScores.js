@@ -6,12 +6,15 @@ class AbilityScores extends Component {
     super();
     this.state = {
       name: 'Samuel Jackson',
-      strRaw: 0,
-      dexRaw: 0,
-      conRaw: 0,
-      intRaw: 0,
-      wisRaw: 0,
-      chaRaw: 0,
+      abilities: {
+        strength: 0,
+        dexterity: 0,
+        constitution: 0,
+        intelligence: 0,
+        wisdom: 0,
+        charisma: 0,
+      },
+
       hp: 0,
       itemSlots: 0,
     };
@@ -39,12 +42,14 @@ class AbilityScores extends Component {
     [str, dex, con, intel, wis, chari] = statArr;
 
     await this.setState({
-      strRaw: str,
-      dexRaw: dex,
-      conRaw: con,
-      intRaw: intel,
-      wisRaw: wis,
-      chaRaw: chari,
+      abilities: {
+        strength: str,
+        dexterity: dex,
+        constitution: con,
+        intelligence: intel,
+        wisdom: wis,
+        charisma: chari,
+      },
       hp: rollDice(8),
       armor: 'Chain',
       helmet: true,
@@ -54,51 +59,33 @@ class AbilityScores extends Component {
       genGearB: 'face paint',
     });
     await this.setState({
-      itemSlots: this.state.conRaw + 10,
+      itemSlots: this.state.abilities.constitution + 10,
     });
   };
 
   render() {
+    const { abilities } = this.state;
     return (
       <div className="container">
         <div className="abilities flex row">
           <table>
             <tbody>
               <tr>
-                <td />
-                <th scope="col">STR</th>
-                <th scope="col">DEX</th>
-                <th scope="col">CON</th>
-                <th scope="col">INT</th>
-                <th scope="col">WIS</th>
-                <th scope="col">CHA</th>
+                <th>Defense</th>
+                <th>Ability</th>
+                <th>Bonus</th>
               </tr>
-              <tr>
-                <th className="sideHeading" scope="row">
-                  Defense
-                </th>
-                <td>{this.state.strRaw}</td>
-                <td>{this.state.dexRaw}</td>
-                <td>{this.state.conRaw}</td>
-                <td>{this.state.intRaw}</td>
-                <td>{this.state.wisRaw}</td>
-                <td>{this.state.chaRaw}</td>
-              </tr>
-              <tr>
-                <th className="sideHeading" scope="row">
-                  Bonus
-                </th>
-                <td>{this.state.strRaw + 10}</td>
-                <td>{this.state.dexRaw + 10}</td>
-                <td>{this.state.conRaw + 10}</td>
-                <td>{this.state.intRaw + 10}</td>
-                <td>{this.state.wisRaw + 10}</td>
-                <td>{this.state.chaRaw + 10}</td>
-              </tr>
+              {Object.keys(abilities).map(ability => (
+                <tr key={ability}>
+                  <td>{abilities[ability]}</td>
+                  <th className={'bold large'}>{ability.slice(0, 3)}</th>
+                  <td>{abilities[ability] + 10}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
-        <div className="flex column">
+        <div className="flex">
           <p>Level: 1</p>
           <p>HP: {this.state.hp}</p>
         </div>

@@ -113,11 +113,3 @@ export const traits = {
   background: ['alchemist', 'beggar', 'burglar', 'charlathan'],
   misfortunes: ['abandoned', 'addicted', 'blackmailed', 'condemned', 'cursed'],
 };
-
-export const dungeoneeringGear = [
-  'rope, 50ft',
-  'pulleys',
-  'candles, 5',
-  'chain, 10ft',
-  'chalk, 10',
-];
