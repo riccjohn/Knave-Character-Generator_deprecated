@@ -3,6 +3,7 @@ import {
   dungeoneeringGear,
   generalGearOne,
   generalGearTwo,
+  armor,
 } from '../data/gear';
 
 export const rollDice = dieSize => {
@@ -45,20 +46,18 @@ const rollForGear = () => {
 };
 
 const getArmor = () => {
-  let armor = '';
   const roll = rollDice(20);
   if (roll <= 3) {
-    armor = '';
+    return '';
   } else if (roll >= 4 && roll <= 14) {
-    armor = 'Gambeson';
+    return armor[0];
   } else if (roll >= 15 && roll <= 19) {
-    armor = 'Brigandine';
+    return armor[1];
   } else if (roll === 20) {
-    armor = 'Chain';
+    return armor[2];
   } else {
     alert('ERROR: ROLL OUT OF RANGE');
   }
-  return armor;
 };
 
 const getHelmetShield = () => {
@@ -92,6 +91,7 @@ export const generateCharacter = () => {
       charisma: chari,
     },
     hp: rollDice(8),
+    sex: rollDice(2) === 1 ? 'male' : 'female',
     traits: {
       physique: randomTrait('physique'),
       face: randomTrait('face'),
