@@ -1,11 +1,10 @@
 import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
-import { rollDice } from '../utils/utils';
 
 class AbilityScores extends Component {
   constructor() {
     super();
     this.state = {
-      name: 'Samuel Jackson',
+      name: '',
       abilities: {
         strength: 0,
         dexterity: 0,
@@ -20,77 +19,47 @@ class AbilityScores extends Component {
     };
   }
 
+  setChar = () => {
+    const { character } = this.props;
+    this.setState(character);
+  };
+
   componentDidMount() {
-    this.rollCharStats();
+    this.setChar();
   }
 
-  rollStat = () => {
-    const rolls = [];
-    for (let i = 0; i < 3; i++) {
-      rolls.push(Math.floor(Math.random() * 6) + 1);
-    }
-    return Math.min(...rolls);
-  };
-
-  rollCharStats = async () => {
-    let str, dex, con, intel, wis, chari;
-    const statArr = [];
-    for (let i = 0; i < 6; i++) {
-      statArr.push(this.rollStat());
-    }
-
-    [str, dex, con, intel, wis, chari] = statArr;
-
-    await this.setState({
-      abilities: {
-        strength: str,
-        dexterity: dex,
-        constitution: con,
-        intelligence: intel,
-        wisdom: wis,
-        charisma: chari,
-      },
-      hp: rollDice(8),
-      armor: 'Chain',
-      helmet: true,
-      shield: true,
-      dungoneeringGear: ['rope', 'crowbar'],
-      genGearA: 'shovel',
-      genGearB: 'face paint',
-    });
-    await this.setState({
-      itemSlots: this.state.abilities.constitution + 10,
-    });
-  };
-
   render() {
-    const { abilities } = this.state;
+    const { character } = this.props;
+    const { abilities } = character;
     return (
-      <div className="container">
-        <div className="abilities flex row">
-          <table>
-            <tbody>
+      <React.Fragment>
+        <div className="abilities flex row center">
+          <table className="table table-striped">
+            <caption>Abilities</caption>
+            <thead className="thead-dark">
               <tr>
                 <th>Defense</th>
                 <th>Ability</th>
                 <th>Bonus</th>
               </tr>
-              {Object.keys(abilities).map(ability => (
-                <tr key={ability}>
-                  <td>{abilities[ability] + 10}</td>
-                  <th className={'bold large'}>{ability.slice(0, 3)}</th>
-                  <td>+{abilities[ability]}</td>
-                </tr>
-              ))}
+            </thead>
+            <tbody>
+              {abilities &&
+                Object.keys(abilities).map(ability => (
+                  <tr key={ability}>
+                    <td>{abilities[ability] + 10}</td>
+                    <th className={'bold large'}>{ability.slice(0, 3)}</th>
+                    <td>+{abilities[ability]}</td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>
-        <div className="flex">
+        <div className="flex center">
           <p>Level: 1</p>
-          <p>HP: {this.state.hp}</p>
+          <p>HP: {character.hp}</p>
         </div>
-        <button onClick={this.rollCharStats}>Roll</button>
-      </div>
+      </React.Fragment>
     );
   }
 }
