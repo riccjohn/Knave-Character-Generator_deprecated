@@ -45,10 +45,10 @@ export const traits = {
   ],
   skin: [
     'battle scarred',
-    'birthmark',
-    'burn scar',
+    'birthmarked',
+    'burn scarred',
     'dark',
-    'makeup',
+    'madeup',
     'oily',
     'pale',
     'perfect',
@@ -62,7 +62,7 @@ export const traits = {
     'tanned',
     'war painted',
     'weathered',
-    'whip scar',
+    'whip scarred',
   ],
   hair: [
     'bald',

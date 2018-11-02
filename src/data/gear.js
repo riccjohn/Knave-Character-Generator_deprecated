@@ -82,60 +82,55 @@ export const weapons = [
     hand: 1,
   },
   {
-    Halberd: {
-      damage: 'd10',
-      slot: 3,
-      quality: 3,
-      hand: 2,
-    },
+    name: 'halberd',
+    damage: 'd10',
+    slot: 3,
+    quality: 3,
+    hand: 2,
   },
   {
-    Warhammer: {
-      damage: 'd10',
-      slot: 3,
-      quality: 3,
-      hand: 2,
-    },
+    name: 'warhammer',
+    damage: 'd10',
+    slot: 3,
+    quality: 3,
+    hand: 2,
   },
   {
-    LongSword: {
-      damage: 'd10',
-      slot: 3,
-      quality: 3,
-      hand: 2,
-    },
+    name: 'longsword',
+
+    damage: 'd10',
+    slot: 3,
+    quality: 3,
+    hand: 2,
   },
   {
-    BattleAxe: {
-      damage: 'd10',
-      slot: 3,
-      quality: 3,
-      hand: 2,
-    },
+    name: 'battleaxe',
+
+    damage: 'd10',
+    slot: 3,
+    quality: 3,
+    hand: 2,
   },
   {
-    Sling: {
-      damage: 'd4',
-      slot: 1,
-      quality: 1,
-      hand: 1,
-    },
+    name: 'sling',
+    damage: 'd4',
+    slot: 1,
+    quality: 1,
+    hand: 1,
   },
   {
-    Bow: {
-      damage: 'd6',
-      slot: 2,
-      quality: 3,
-      hand: 2,
-    },
+    name: 'bow',
+    damage: 'd6',
+    slot: 2,
+    quality: 3,
+    hand: 2,
   },
   {
-    Crossbow: {
-      damage: 'd8',
-      slot: 3,
-      quality: 3,
-      hand: 2,
-    },
+    name: 'crossbow',
+    damage: 'd8',
+    slot: 3,
+    quality: 3,
+    hand: 2,
   },
 ];
 

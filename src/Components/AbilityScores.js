@@ -57,9 +57,9 @@ class AbilityScores extends Component {
             </tbody>
           </table>
         </div>
-        <div className="flex center">
-          <p>Level: 1</p>
-          <p>HP: {character.hp}</p>
+        <div className="flex center column">
+          <p className="block">Level: 1</p>{' '}
+          <p className="block">HP: {character.hp}</p>
         </div>
       </React.Fragment>
     );

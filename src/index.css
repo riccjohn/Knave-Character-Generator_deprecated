@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Marcellus');
 
+html,
+#root {
+  height: 100vh;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Marcellus', serif;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
   font-size: 12px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -21,14 +23,18 @@ body {
   flex-direction: column;
 }
 
+.row {
+  flex-direction: row;
+}
+
 .container {
   width: 100%;
   justify-content: center;
 }
 
 .main-container {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   align-items: center;
 }
 
@@ -36,6 +42,10 @@ body {
   height: 100%;
   width: 75%;
   align-items: center;
+}
+
+.inner-width: {
+  width: 75%;
 }
 
 .center {
@@ -55,4 +65,22 @@ body {
 table td,
 table tr {
   /* border: 1px solid black; */
+}
+
+.footer {
+  margin-top: 2.5rem;
+  background-color: #212529;
+  width: 100%;
+  padding: 0.3rem 0;
+  color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.block {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100%;
 }

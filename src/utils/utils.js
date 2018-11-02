@@ -114,3 +114,7 @@ export const generateCharacter = () => {
 export const randomTrait = traitName => {
   return traits[traitName][getRand(traits[traitName].length)];
 };
+
+export const initialCaps = str => {
+  return str.slice(0, 1).toUpperCase() + str.slice(1);
+};
