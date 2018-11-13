@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Marcellus');
+@import url("https://fonts.googleapis.com/css?family=Marcellus");
 
 html,
 #root {
-  height: 100vh;
+  height: 100%;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Marcellus', serif;
+  font-family: "Marcellus", serif;
   font-size: 12px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

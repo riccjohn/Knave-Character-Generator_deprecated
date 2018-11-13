@@ -1,8 +1,8 @@
-import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
-import { AbilityScores, CharacterDetails } from './Components'; // eslint-disable-line no-unused-vars
-import './index.css';
-import { weapons } from './data/gear';
-import { generateCharacter } from './utils/utils';
+import React, { Component } from "react"; // eslint-disable-line no-unused-vars
+import { AbilityScores, CharacterDetails } from "./Components"; // eslint-disable-line no-unused-vars
+import "./index.css";
+import { weapons } from "./data/gear";
+import { generateCharacter } from "./utils/utils";
 
 class App extends Component {
   constructor() {
