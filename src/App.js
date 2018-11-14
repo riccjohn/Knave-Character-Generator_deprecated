@@ -10,14 +10,10 @@ class App extends Component {
     this.state = {};
   }
 
-  addWeapon = weaponName => {
-    for (let i = 0; i < weapons.length; i++) {
-      if (weapons[i].name === weaponName) {
-        this.setState({
-          weapon: weapons[i],
-        });
-      }
-    }
+  addWeapon = num => {
+    this.setState({
+      weapon: weapons[num],
+    });
   };
 
   componentDidMount() {
@@ -25,6 +21,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <div className="main-container flex column">
         <div className="main-padding flex column">

@@ -1,10 +1,10 @@
-import { traits } from '../data/traits';
+import { traits } from "../data/traits";
 import {
   dungeoneeringGear,
   generalGearOne,
   generalGearTwo,
   armor,
-} from '../data/gear';
+} from "../data/gear";
 
 export const rollDice = dieSize => {
   return Math.floor(Math.random() * dieSize + 1);
@@ -31,7 +31,7 @@ const rollCharStats = () => {
 };
 
 const rollForGear = () => {
-  const gearArr = ['rations (2)'];
+  const gearArr = ["rations (2)"];
   while (gearArr.length < 3) {
     let gear = dungeoneeringGear[getRand(dungeoneeringGear.length)];
     if (!gearArr.includes(gear)) {
@@ -48,7 +48,7 @@ const rollForGear = () => {
 const getArmor = () => {
   const roll = rollDice(20);
   if (roll <= 3) {
-    return '';
+    return "";
   } else if (roll >= 4 && roll <= 14) {
     return armor[0];
   } else if (roll >= 15 && roll <= 19) {
@@ -56,23 +56,38 @@ const getArmor = () => {
   } else if (roll === 20) {
     return armor[2];
   } else {
-    alert('ERROR: ROLL OUT OF RANGE');
+    alert("ERROR: ROLL OUT OF RANGE");
   }
 };
 
 const getHelmetShield = () => {
-  let helmetShield = '';
+  let helmetShield = "";
   const roll = rollDice(20);
   if (roll <= 13) {
-    helmetShield = '';
+    helmetShield = null;
   } else if (roll > 13 && roll <= 16) {
-    helmetShield = 'helmet';
+    helmetShield = {
+      name: "helmet",
+      defense: 1,
+      slot: 1,
+      quality: 1,
+    };
   } else if (roll > 16 && roll <= 19) {
-    helmetShield = 'shield';
+    helmetShield = {
+      name: "shield",
+      defense: 1,
+      slot: 1,
+      quality: 1,
+    };
   } else if (roll === 20) {
-    helmetShield = 'helmet & shield';
+    helmetShield = {
+      name: "helmet & shield",
+      defense: 2,
+      slot: 2,
+      quality: 1,
+    };
   } else {
-    helmetShield = 'error';
+    helmetShield = "error";
   }
   return helmetShield;
 };
@@ -91,18 +106,18 @@ export const generateCharacter = () => {
       charisma: chari,
     },
     hp: rollDice(8),
-    sex: rollDice(2) === 1 ? 'male' : 'female',
+    sex: rollDice(2) === 1 ? "male" : "female",
     traits: {
-      physique: randomTrait('physique'),
-      face: randomTrait('face'),
-      skin: randomTrait('skin'),
-      hair: randomTrait('hair'),
-      clothing: randomTrait('clothing'),
-      virtue: randomTrait('virtue'),
-      vice: randomTrait('vice'),
-      speech: randomTrait('speech'),
-      background: randomTrait('background'),
-      misfortunes: randomTrait('misfortunes'),
+      physique: randomTrait("physique"),
+      face: randomTrait("face"),
+      skin: randomTrait("skin"),
+      hair: randomTrait("hair"),
+      clothing: randomTrait("clothing"),
+      virtue: randomTrait("virtue"),
+      vice: randomTrait("vice"),
+      speech: randomTrait("speech"),
+      background: randomTrait("background"),
+      misfortunes: randomTrait("misfortunes"),
     },
     gear: rollForGear(),
     armor: getArmor(),
@@ -117,4 +132,24 @@ export const randomTrait = traitName => {
 
 export const initialCaps = str => {
   return str.slice(0, 1).toUpperCase() + str.slice(1);
+};
+
+export const calcUsedSlots = state => {
+  const armor = state.armor ? state.armor.slot : 0;
+  const helmetShield = state.helmetShield ? state.helmetShield.slot : 0;
+
+  const weapon = state.weapon ? state.weapon.slot : 0;
+
+  return 5 + armor + helmetShield + weapon;
+};
+
+export const getTotalSlots = state => {
+  return state.abilities.constitution + 10;
+};
+
+export const checkDisabled = (state, weapon) => {
+  if (state.abilities) {
+    return getTotalSlots(state) - 2 < weapon.slot + calcUsedSlots(state);
+  }
+  return false;
 };

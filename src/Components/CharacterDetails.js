@@ -1,16 +1,16 @@
-import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
-import { weapons } from '../data/gear';
-import { initialCaps } from '../utils/utils';
+import React, { Component } from "react"; // eslint-disable-line no-unused-vars
+import { weapons } from "../data/gear";
+import { WeaponOption } from "./WeaponOption";
+import { calcUsedSlots, getTotalSlots } from "../utils/utils";
 
 const CharacterDetails = props => {
   const { character } = props;
-  // console.log('CHARACTER: ', character);
   return (
     <React.Fragment>
       <h1>Items</h1>
       <p>
-        Total Item Slots:{' '}
-        {character.abilities && character.abilities.constitution + 10}
+        Item Slots Used: {calcUsedSlots(character)} /{" "}
+        {character.abilities && getTotalSlots(character)}
       </p>
       <h4>Weapon</h4>
       <p>Choose a weapon</p>
@@ -20,12 +20,8 @@ const CharacterDetails = props => {
         }}
         id="weapon">
         <option value="default">-- WEAPONS --</option>
-        {weapons.map(weapon => (
-          <option key={weapon.name} value={weapon.name}>
-            {initialCaps(weapon.name)} • Damage: {weapon.damage} • Slots:{' '}
-            {weapon.slot}
-          </option>
-        ))}
+
+        {weapons.map((weapon, index) => WeaponOption(weapon, index, character))}
       </select>
       {character.gear ? (
         <table className="gear table table-striped table-sm">
@@ -41,15 +37,15 @@ const CharacterDetails = props => {
             {!!character.armor && (
               <tr>
                 <td>{character.armor.name}</td>
-                <td>+{character.armor.defense || '-'} def</td>
+                <td>+{character.armor.defense || "-"} def</td>
                 <td>{character.armor.slot || 1}</td>
               </tr>
             )}
             {!!character.helmetShield && (
               <tr>
-                <td>{character.helmetShield}</td>
+                <td>{character.helmetShield.name}</td>
                 <td>-</td>
-                <td>-</td>
+                <td>{character.helmetShield.slot}</td>
               </tr>
             )}
             {character.gear.map(item => (
@@ -69,15 +65,15 @@ const CharacterDetails = props => {
       {!!character.traits && (
         <React.Fragment>
           <p className="inner-width">
-            You are{' '}
-            {['a', 'e', 'i', 'o', 'u'].includes(character.traits.physique[0])
-              ? 'an'
-              : 'a'}{' '}
-            {character.traits.physique} {character.sex} with a{' '}
-            {character.traits.face} face, {character.traits.skin} skin,{' '}
-            {character.traits.hair} hair, and {character.traits.clothing}{' '}
-            clothes. Your biggest virtue is that you're{' '}
-            {character.traits.virtue}, but your largest vice is that you're{' '}
+            You are{" "}
+            {["a", "e", "i", "o", "u"].includes(character.traits.physique[0])
+              ? "an"
+              : "a"}{" "}
+            {character.traits.physique} {character.sex} with a{" "}
+            {character.traits.face} face, {character.traits.skin} skin,{" "}
+            {character.traits.hair} hair, and {character.traits.clothing}{" "}
+            clothes. Your biggest virtue is that you're{" "}
+            {character.traits.virtue}, but your largest vice is that you're{" "}
             {character.traits.vice}. Your speech is {character.traits.speech}.
           </p>
           <p className="inner-width">
