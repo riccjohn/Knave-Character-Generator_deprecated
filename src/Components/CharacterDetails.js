@@ -1,7 +1,7 @@
-import React, { Component } from "react"; // eslint-disable-line no-unused-vars
-import { weapons } from "../data/gear";
-import { WeaponOption } from "./WeaponOption";
-import { calcUsedSlots, getTotalSlots } from "../utils/utils";
+import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
+import { weapons } from '../data/gear';
+import { WeaponOption } from './WeaponOption';
+import { calcUsedSlots, getTotalSlots } from '../utils/utils';
 
 const CharacterDetails = props => {
   const { character } = props;
@@ -9,7 +9,7 @@ const CharacterDetails = props => {
     <React.Fragment>
       <h1>Items</h1>
       <p>
-        Item Slots Used: {calcUsedSlots(character)} /{" "}
+        Item Slots Used: {calcUsedSlots(character)} /{' '}
         {character.abilities && getTotalSlots(character)}
       </p>
       <h4>Weapon</h4>
@@ -37,7 +37,7 @@ const CharacterDetails = props => {
             {!!character.armor && (
               <tr>
                 <td>{character.armor.name}</td>
-                <td>+{character.armor.defense || "-"} def</td>
+                <td>+{character.armor.defense || '-'} def</td>
                 <td>{character.armor.slot || 1}</td>
               </tr>
             )}
@@ -64,16 +64,16 @@ const CharacterDetails = props => {
       <h1>Traits</h1>
       {!!character.traits && (
         <React.Fragment>
-          <p className="inner-width">
-            You are{" "}
-            {["a", "e", "i", "o", "u"].includes(character.traits.physique[0])
-              ? "an"
-              : "a"}{" "}
-            {character.traits.physique} {character.sex} with a{" "}
-            {character.traits.face} face, {character.traits.skin} skin,{" "}
-            {character.traits.hair} hair, and {character.traits.clothing}{" "}
-            clothes. Your biggest virtue is that you're{" "}
-            {character.traits.virtue}, but your largest vice is that you're{" "}
+          <p className="inner-width section">
+            You are{' '}
+            {['a', 'e', 'i', 'o', 'u'].includes(character.traits.physique[0])
+              ? 'an'
+              : 'a'}{' '}
+            {character.traits.physique} {character.sex} with a{' '}
+            {character.traits.face} face, {character.traits.skin} skin,{' '}
+            {character.traits.hair} hair, and {character.traits.clothing}{' '}
+            clothes. Your biggest virtue is that you're{' '}
+            {character.traits.virtue}, but your largest vice is that you're{' '}
             {character.traits.vice}. Your speech is {character.traits.speech}.
           </p>
           <p className="inner-width">
@@ -87,19 +87,3 @@ const CharacterDetails = props => {
 };
 
 export default CharacterDetails;
-
-/*{character.traits ? (
-  <table className="table table-striped table-sm">
-    <caption>Traits</caption>
-    <tbody>
-      {Object.keys(character.traits).map(trait => (
-        <tr key={trait}>
-          <td>{trait}</td>
-          <td>{character.traits[trait]}</td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
-) : (
-  <p>Loading ...</p>
-)}*/

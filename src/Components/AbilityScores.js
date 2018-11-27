@@ -1,10 +1,10 @@
-import React, { Component } from "react"; // eslint-disable-line no-unused-vars
+import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
 
 class AbilityScores extends Component {
   constructor() {
     super();
     this.state = {
-      name: "",
+      name: '',
       abilities: {
         strength: 0,
         dexterity: 0,
@@ -33,7 +33,7 @@ class AbilityScores extends Component {
     const { abilities } = character;
     return (
       <React.Fragment>
-        <div className="abilities flex row center">
+        <div className="abilities flex row center section">
           <table className="table table-striped">
             <caption>Abilities</caption>
             <thead className="thead-dark">
@@ -48,7 +48,7 @@ class AbilityScores extends Component {
                 Object.keys(abilities).map(ability => (
                   <tr key={ability}>
                     <td>{abilities[ability] + 10}</td>
-                    <th className={"bold large"}>
+                    <th className={'bold large'}>
                       {ability.slice(0, 3).toUpperCase()}
                     </th>
                     <td>+{abilities[ability]}</td>
@@ -57,8 +57,8 @@ class AbilityScores extends Component {
             </tbody>
           </table>
         </div>
-        <div className="flex center column">
-          <p className="block">Level: 1</p>{" "}
+        <div className="flex center column section">
+          <p className="block">Level: 1</p>{' '}
           <p className="block">HP: {character.hp}</p>
         </div>
       </React.Fragment>
