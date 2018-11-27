@@ -36,6 +36,13 @@ const CharacterDetails = props => {
               </tr>
             </thead>
             <tbody>
+              {!!character.weapon && (
+                <tr>
+                  <td>{character.weapon.name}</td>
+                  <td>{character.weapon.damage}</td>
+                  <td>{character.weapon.slot}</td>
+                </tr>
+              )}
               {!!character.armor && (
                 <tr>
                   <td>{character.armor.name}</td>
