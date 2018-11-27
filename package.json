@@ -1,6 +1,7 @@
 {
   "name": "knave",
   "version": "0.1.0",
+  "homepage": "https://riccjohn.github.io/Knave-Character-Generator/",
   "private": true,
   "dependencies": {
     "react": "^16.6.0",
