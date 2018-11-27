@@ -33,6 +33,7 @@ class AbilityScores extends Component {
     const { abilities } = character;
     return (
       <React.Fragment>
+        <h2>Ability Scores</h2>
         <div className="abilities flex row center section">
           <table className="table table-striped table-sm">
             <caption>Abilities</caption>
@@ -56,10 +57,6 @@ class AbilityScores extends Component {
                 ))}
             </tbody>
           </table>
-        </div>
-        <div className="flex center column section">
-          <p className="block">Level: 1</p>{' '}
-          <p className="block">HP: {character.hp}</p>
         </div>
       </React.Fragment>
     );

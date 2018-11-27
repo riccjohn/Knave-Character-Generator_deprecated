@@ -8,12 +8,12 @@ const CharacterDetails = props => {
   return (
     <React.Fragment>
       <div className="flex column center section items">
-        <h1>Items</h1>
+        <h2>Items</h2>
         <p>
           Item Slots Used: {calcUsedSlots(character)} /{' '}
           {character.abilities && getTotalSlots(character)}
         </p>
-        <h4>Weapon</h4>
+        <h5>Weapon</h5>
         <select
           onChange={el => {
             props.weaponUpdate(el.target.value);
@@ -61,28 +61,6 @@ const CharacterDetails = props => {
           </table>
         ) : (
           <p>Loading ...</p>
-        )}
-
-        <h1>Traits</h1>
-        {!!character.traits && (
-          <div>
-            <p className="inner-width section">
-              You are{' '}
-              {['a', 'e', 'i', 'o', 'u'].includes(character.traits.physique[0])
-                ? 'an'
-                : 'a'}{' '}
-              {character.traits.physique} {character.sex} with a{' '}
-              {character.traits.face} face, {character.traits.skin} skin,{' '}
-              {character.traits.hair} hair, and {character.traits.clothing}{' '}
-              clothes. Your biggest virtue is that you're{' '}
-              {character.traits.virtue}, but your largest vice is that you're{' '}
-              {character.traits.vice}. Your speech is {character.traits.speech}.
-            </p>
-            <p className="inner-width">
-              You were formerly a {character.traits.background}, and found
-              yourself {character.traits.misfortunes}.
-            </p>
-          </div>
         )}
       </div>
     </React.Fragment>
