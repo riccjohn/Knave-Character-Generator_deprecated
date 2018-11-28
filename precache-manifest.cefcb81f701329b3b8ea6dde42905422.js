@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/Knave-Character-Generator/static/js/runtime~main.537dffda.js"
   },
   {
-    "revision": "e931dbc3264567a9f802",
-    "url": "/Knave-Character-Generator/static/js/main.e931dbc3.chunk.js"
+    "revision": "5110e6f51ad3432e20ad",
+    "url": "/Knave-Character-Generator/static/js/main.5110e6f5.chunk.js"
   },
   {
     "revision": "79f292c14da9687a40dd",
     "url": "/Knave-Character-Generator/static/js/1.79f292c1.chunk.js"
   },
   {
-    "revision": "e931dbc3264567a9f802",
-    "url": "/Knave-Character-Generator/static/css/main.77ccf939.chunk.css"
+    "revision": "5110e6f51ad3432e20ad",
+    "url": "/Knave-Character-Generator/static/css/main.d7e91205.chunk.css"
   },
   {
-    "revision": "f69048d2905a31a4a6974b0914a1c33f",
+    "revision": "cd25735310882111d25e2dda528129f7",
     "url": "/Knave-Character-Generator/index.html"
   }
 ];
