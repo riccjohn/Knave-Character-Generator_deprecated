@@ -99,14 +99,6 @@ select {
 }
 
 @media only screen and (max-width: 360px) {
-  body {
-    font-size: 10px;
-  }
-
-  .description {
-    font-size: 12px;
-  }
-
   caption {
     display: none;
   }
