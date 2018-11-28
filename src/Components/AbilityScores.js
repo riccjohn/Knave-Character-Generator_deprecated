@@ -34,7 +34,7 @@ class AbilityScores extends Component {
     return (
       <React.Fragment>
         <h2>Ability Scores</h2>
-        <div className="abilities flex row center section">
+        <div className="abilities flex center section column">
           <table className="table table-striped table-sm">
             <caption>Abilities</caption>
             <thead className="thead-dark">

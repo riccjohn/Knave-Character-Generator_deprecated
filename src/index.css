@@ -81,3 +81,44 @@ select {
 .bold {
   font-size: 1.4em;
 }
+
+@media only screen and (max-width: 535px) {
+  table,
+  .table {
+    min-width: 200px;
+    width: 375px;
+  }
+
+  .main-padding {
+    width: 100%;
+  }
+
+  .description > p {
+    padding: 0 1rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  body {
+    font-size: 10px;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  caption {
+    display: none;
+  }
+
+  table,
+  .table {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .table-sm td,
+  .table-sm th {
+    padding: 0px;
+  }
+}

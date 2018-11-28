@@ -6,7 +6,7 @@ const Traits = props => {
     <React.Fragment>
       <h1>Traits</h1>
       {!!character.traits && (
-        <div className="inner-width section">
+        <div className="inner-width section description">
           <p>
             You are{' '}
             {['a', 'e', 'i', 'o', 'u'].includes(character.traits.physique[0])
