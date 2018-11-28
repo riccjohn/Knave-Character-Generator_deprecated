@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Knave-Character-Generator/precache-manifest.c3088fc1c69d22640f177bff108fe718.js"
+  "/Knave-Character-Generator/precache-manifest.064cf1c7d57aa281df96749401416184.js"
 );
 
 workbox.clientsClaim();
