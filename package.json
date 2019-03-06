@@ -4,10 +4,9 @@
   "homepage": "https://riccjohn.github.io/Knave-Character-Generator/",
   "private": true,
   "dependencies": {
-    "commitizen": "^3.0.7",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-scripts": "2.0.5"
+    "react-scripts": "^2.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,6 +26,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "commitizen": "^3.0.7",
     "cz-conventional-changelog": "^2.1.0",
     "gh-pages": "^2.0.1"
   },
