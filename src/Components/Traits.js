@@ -4,7 +4,7 @@ const Traits = props => {
   const { character } = props;
   return (
     <React.Fragment>
-      <h1>Traits</h1>
+      <h2>Traits</h2>
       {!!character.traits && (
         <div className="inner-width section description">
           <p>

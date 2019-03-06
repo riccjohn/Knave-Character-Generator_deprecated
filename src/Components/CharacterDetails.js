@@ -13,7 +13,7 @@ const CharacterDetails = props => {
           Item Slots Used: {calcUsedSlots(character)} /{' '}
           {character.abilities && getTotalSlots(character)}
         </p>
-        <h5>Weapon</h5>
+        <h3>Weapon</h3>
         <select
           onChange={el => {
             props.weaponUpdate(el.target.value);
