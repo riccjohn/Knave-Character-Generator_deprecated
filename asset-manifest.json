@@ -1,13 +1,14 @@
 {
-  "main.css": "/Knave-Character-Generator/static/css/main.d7e91205.chunk.css",
-  "main.js": "/Knave-Character-Generator/static/js/main.5110e6f5.chunk.js",
-  "main.js.map": "/Knave-Character-Generator/static/js/main.5110e6f5.chunk.js.map",
-  "static/js/1.79f292c1.chunk.js": "/Knave-Character-Generator/static/js/1.79f292c1.chunk.js",
-  "static/js/1.79f292c1.chunk.js.map": "/Knave-Character-Generator/static/js/1.79f292c1.chunk.js.map",
-  "runtime~main.js": "/Knave-Character-Generator/static/js/runtime~main.537dffda.js",
-  "runtime~main.js.map": "/Knave-Character-Generator/static/js/runtime~main.537dffda.js.map",
-  "static/css/main.d7e91205.chunk.css.map": "/Knave-Character-Generator/static/css/main.d7e91205.chunk.css.map",
+  "main.css": "/Knave-Character-Generator/static/css/main.a90bf9ab.chunk.css",
+  "main.js": "/Knave-Character-Generator/static/js/main.5ca0d90d.chunk.js",
+  "main.js.map": "/Knave-Character-Generator/static/js/main.5ca0d90d.chunk.js.map",
+  "runtime~main.js": "/Knave-Character-Generator/static/js/runtime~main.4f12af1c.js",
+  "runtime~main.js.map": "/Knave-Character-Generator/static/js/runtime~main.4f12af1c.js.map",
+  "static/js/2.83322791.chunk.js": "/Knave-Character-Generator/static/js/2.83322791.chunk.js",
+  "static/js/2.83322791.chunk.js.map": "/Knave-Character-Generator/static/js/2.83322791.chunk.js.map",
   "index.html": "/Knave-Character-Generator/index.html",
-  "precache-manifest.cefcb81f701329b3b8ea6dde42905422.js": "/Knave-Character-Generator/precache-manifest.cefcb81f701329b3b8ea6dde42905422.js",
-  "service-worker.js": "/Knave-Character-Generator/service-worker.js"
+  "precache-manifest.3134082da12c43e2d7ae713feac66ff1.js": "/Knave-Character-Generator/precache-manifest.3134082da12c43e2d7ae713feac66ff1.js",
+  "service-worker.js": "/Knave-Character-Generator/service-worker.js",
+  "static/css/main.a90bf9ab.chunk.css.map": "/Knave-Character-Generator/static/css/main.a90bf9ab.chunk.css.map",
+  "static/media/index.css": "/Knave-Character-Generator/static/media/Sebaldus-Gotisch.004e2d19.ttf"
 }
