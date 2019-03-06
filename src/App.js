@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
-import { AbilityScores, CharacterDetails, Traits } from './Components'; // eslint-disable-line no-unused-vars
+import { AbilityScores, CharacterDetails, Traits } from './Components';
 import './index.css';
 import { weapons } from './data/gear';
 import { generateCharacter } from './utils/utils';
