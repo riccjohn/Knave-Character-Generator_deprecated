@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { AbilityScores, CharacterDetails, Traits, Footer } from './Components';
+import {
+  AbilityScores,
+  CharacterDetails,
+  Traits,
+  Footer,
+  ExportButton,
+} from './Components';
 import './index.css';
 import { weapons } from './data/gear';
 import { generateCharacter } from './utils/utils';
@@ -7,7 +13,7 @@ import { generateCharacter } from './utils/utils';
 class App extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = generateCharacter();
   }
 
   addWeapon = num => {
@@ -15,10 +21,6 @@ class App extends Component {
       weapon: weapons[num],
     });
   };
-
-  componentDidMount() {
-    this.setState(generateCharacter());
-  }
 
   render() {
     return (
@@ -31,6 +33,7 @@ class App extends Component {
             weaponUpdate={this.addWeapon}
             character={this.state}
           />
+          <ExportButton character={this.state} />
         </div>
 
         <Footer />
